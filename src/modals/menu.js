@@ -1,6 +1,6 @@
 import mirror, {actions} from 'tinper-mirrorx';
 
-mirror.model({
+const menuModal = {
     name: 'menu',
     initialState: 0,
     reducers: {
@@ -17,4 +17,6 @@ mirror.model({
             actions.app.increment()
         }
     }
-})
+};
+
+export default menuModal;

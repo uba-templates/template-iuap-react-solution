@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "react-router": "^3.0.5",
     "tinper-bee": "^0.6.2",
     "tinper-mirrorx": "0.0.3"
   }
