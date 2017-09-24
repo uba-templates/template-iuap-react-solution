@@ -1,5 +1,9 @@
 import Welcome from './Welcome/index.jsx';
+import Header from './Header';
+import Menus from './Menus';
 
 export {
-    Welcome
+    Welcome,
+    Header,
+    Menus
 }

@@ -84,7 +84,8 @@ module.exports = {
             assets: path.resolve(__dirname, "src/assets/"),
             containers: path.resolve(__dirname, "src/containers/"),
             utils: path.resolve(__dirname, "src/utils/"),
-            serve: path.resolve(__dirname, "src/serve/")
+            serve: path.resolve(__dirname, "src/serve/"),
+            model: path.resolve(__dirname, "src/models/")
         }
     }
 }
