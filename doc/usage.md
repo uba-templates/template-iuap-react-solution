@@ -78,3 +78,8 @@ vendors.48d65830eb421a4a2bfd.js    1.53 kB       1  [emitted]         vendors
 [uba]: uba build success!
 ```
 运行完毕后会在当前的目录下看到`dist`产出的文件夹结构，里面就是我们要部署到线上的资源工程。通过build后的日志也可以看出来webpack处理的详细信息。
+
+
+### 开发一个新功能
+
+
