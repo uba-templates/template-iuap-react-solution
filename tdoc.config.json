@@ -1,0 +1,64 @@
+{
+    "name": "tinper-react",
+    "dest": "docs",
+    "common": {
+        "title": "tinper-react",
+        "footer": "Made By YonYouFED. © 2014 - 2016",
+        "home": "tinper-react",
+        "homeUrl": "",
+        "navbars": []
+    },
+    "options": {
+        "markdown": {
+            "menuLevel": 2
+        }
+    },
+    "pages": [
+        {
+            "name": "index",
+            "title": "简介",
+            "banner": {
+                "title": "tinper-react",
+                "description": "整体技术方案介绍"
+            },
+            "content": "./doc/index.md"
+        },
+        {
+            "name": "config",
+            "title": "环境搭建",
+            "banner": {
+                "title": "tinper-react",
+                "description": "环境搭建"
+            },
+            "content": "./doc/config.md"
+        },
+        {
+            "name": "usage",
+            "title": "开始使用",
+            "banner": {
+                "title": "tinper-react",
+                "description": "开始使用"
+            },
+            "content": "./doc/usage.md"
+        },
+        {
+            "name": "standard",
+            "title": "规范及建议",
+            "banner": {
+                "title": "tinper-react",
+                "description": "规范及建议"
+            },
+            "content": "./doc/standard.md"
+        },
+        {
+            "name": "more",
+            "title": "更多",
+            "banner": {
+                "title": "tinper-react",
+                "description": "更多"
+            },
+            "content": "./doc/more.md"
+        }
+    ],
+    "rootDir": "doc"
+}

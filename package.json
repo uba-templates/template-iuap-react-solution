@@ -4,6 +4,9 @@
   "description": "iuap react solution",
   "main": "index.js",
   "scripts": {
+    "init":"tdoc init",
+    "doc_build":"tdoc build",
+    "doc_server":"tdoc server",
     "dev": "uba server",
     "build": "uba build"
   },
@@ -27,6 +30,7 @@
     "open-browser-webpack-plugin": "0.0.5",
     "postcss-loader": "^2.0.6",
     "style-loader": "^0.18.1",
+    "tdoc-cli": "0.0.20",
     "uba": "2.2.0",
     "url-loader": "^0.5.8",
     "webpack": "^2.7.0",
