@@ -18,8 +18,7 @@
             "name": "index",
             "title": "简介",
             "banner": {
-                "title": "tinper-react",
-                "description": "整体技术方案介绍"
+                "title": "整体技术方案介绍"
             },
             "content": "./doc/index.md"
         },
@@ -27,8 +26,8 @@
             "name": "config",
             "title": "环境搭建",
             "banner": {
-                "title": "tinper-react",
-                "description": "环境搭建"
+                "title": "环境搭建",
+                "description": ""
             },
             "content": "./doc/config.md"
         },
@@ -36,8 +35,8 @@
             "name": "usage",
             "title": "开始使用",
             "banner": {
-                "title": "tinper-react",
-                "description": "开始使用"
+                "title": "开始使用",
+                "description": ""
             },
             "content": "./doc/usage.md"
         },
@@ -45,8 +44,8 @@
             "name": "standard",
             "title": "规范及建议",
             "banner": {
-                "title": "tinper-react",
-                "description": "规范及建议"
+                "title": "规范及建议",
+                "description": ""
             },
             "content": "./doc/standard.md"
         },
@@ -54,8 +53,8 @@
             "name": "more",
             "title": "更多",
             "banner": {
-                "title": "tinper-react",
-                "description": "更多"
+                "title": "更多",
+                "description": ""
             },
             "content": "./doc/more.md"
         }

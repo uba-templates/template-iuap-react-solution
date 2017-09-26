@@ -1,12 +1,10 @@
-# 规范及建议
-
-### 前端代码规范
+## 前端代码规范
 
 [我们的前端规范](https://github.com/iuap-design/YY-Code-Guide)
 
 
 
-### 建议
+## 建议
 
 - 沟通
 
