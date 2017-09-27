@@ -4,8 +4,8 @@
   "description": "iuap react solution",
   "main": "index.js",
   "scripts": {
-    "doc_build":"tdoc build",
-    "doc_server":"tdoc server",
+    "doc_build": "tdoc build",
+    "doc_server": "rm -rf website/ && tdoc build && tdoc server",
     "dev": "uba server",
     "build": "uba build"
   },

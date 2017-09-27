@@ -1,6 +1,7 @@
 {
     "name": "tinper-react",
-    "dest": "docs",
+    "rootDir": "docs",
+    "dest": "website",
     "common": {
         "title": "tinper-react",
         "footer": "Made By YonYouFED. © 2014 - 2016",
@@ -16,38 +17,27 @@
     "pages": [
         {
             "name": "index",
-            "title": "简介",
+            "title": "开发框架",
             "banner": {
-                "title": "整体技术方案介绍"
+                "title": "一站式Web开发解决方案，提速增效~！"
             },
-            "content": "./doc/index.md"
+            "content": "./docs/index.md"
         },
         {
-            "name": "config",
-            "title": "环境搭建",
-            "banner": {
-                "title": "环境搭建",
-                "description": ""
-            },
-            "content": "./doc/config.md"
+          "title": "PC组件库tinper-bee",
+          "url": "http://bee.tinper.org/"
         },
         {
-            "name": "usage",
-            "title": "开始使用",
-            "banner": {
-                "title": "开始使用",
-                "description": ""
-            },
-            "content": "./doc/usage.md"
+          "title": "移动组件库lebra",
+          "url": "https://github.com/lebra/lebra-components"
         },
         {
-            "name": "standard",
-            "title": "规范及建议",
-            "banner": {
-                "title": "规范及建议",
-                "description": ""
-            },
-            "content": "./doc/standard.md"
+          "title": "应用框架Mirror",
+          "url": "http://bee.tinper.org/"
+        },
+        {
+          "title": "业务组件平台",
+          "url": "https://github.com/tinper-bee/bee-application-components"
         },
         {
             "name": "more",
@@ -56,8 +46,8 @@
                 "title": "更多",
                 "description": ""
             },
-            "content": "./doc/more.md"
+            "content": "./docs/more.md"
         }
-    ],
-    "rootDir": "doc"
+    ]
+
 }
