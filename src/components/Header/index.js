@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar,FormControl, Badge, Icon,Menu } from 'tinper-bee';
 import classnames from 'classnames';
-import { connect, actions } from 'tinper-mirrorx';
+import { connect, actions } from 'mirrorx';
 
 import './index.less';
 

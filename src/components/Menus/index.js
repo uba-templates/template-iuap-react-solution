@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Icon, Menu } from 'tinper-bee';
-import mirror, { Link, actions, connect } from 'tinper-mirrorx';
+import mirror, { Link, actions, connect } from 'mirrorx';
 
 
 import './index.less';

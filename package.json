@@ -39,7 +39,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "classnames": "^2.2.5",
-    "tinper-bee": "^0.6.2",
-    "tinper-mirrorx": "0.0.3"
+    "mirrorx": "^0.2.7",
+    "tinper-bee": "^0.6.2"
   }
 }

@@ -1,4 +1,4 @@
-import mirror, {actions} from 'tinper-mirrorx';
+import mirror, {actions} from 'mirrorx';
 
 const menuModel = {
     name: 'menuModel',
