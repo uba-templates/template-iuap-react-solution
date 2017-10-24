@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tinper-react 开发框架</title>
+    <link rel="stylesheet" href="source/app.css"/>
+    <link rel="stylesheet" href="source/highlight.min.css">
+</head>
+<body>
+<a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
+
+
+<!-- Docs master nav -->
+<header class="navbar navbar-static-top docs-nav" id="top" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a href="" class="navbar-brand">tinper-react</a>
+            
+        </div>
+        <nav id="bs-navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                    
+                    <li class="active">
+                        
+                        <a href="index.html">开发框架</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
+                        <a href="http://bee.tinper.org/" target="_blank">PC组件库tinper-bee</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
+                        <a href="https://github.com/lebra/lebra-components" target="_blank">移动组件库lebra</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
+                        <a href="http://bee.tinper.org/" target="_blank">应用框架Mirror</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
+                        <a href="https://github.com/tinper-bee/bee-application-components" target="_blank">业务组件平台</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
+                        <a href="more.html">更多</a>
+                        
+                    </li>
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Docs page layout -->
+
+<div class="docs-header" id="content" style="margin-bottom:0">
+    <div class="container">
+        <h1>一站式Web开发解决方案，提速增效~！</h1>
+        <p></p>
+    </div>
+</div>
+
+
+
+<header style="height:20px"></header>
+
+
+<div class="container docs-container">
+    
+    
+    <div class="row">
+        <div class="col-md-9 markdown-body" role="main">
+            
+            <h2 id="概述">概述</h2><h3 id="初心">初心</h3><p>我们为什么要做这个整体解决方案。</p>
+<ul>
+<li><p>第一点，现在前端生态很好，各种框架和类库层出不穷，质量和易用性也是参差不齐。对于每一个项目，复杂的前端选型过程带给我们沉重的负担。</p>
+</li>
+<li><p>第二点，当我们好不容易做好了技术选型，又要花很多时间来拼凑他们，并且需要沉淀很长时间，踩很多的坑，来得到一个比较好的实践。</p>
+</li>
+<li><p>第三点，现在前端工程日益复杂，目前主流的方案，都需要依赖于webpack或是其他工具来辅助开发。配置开发工程已经很需要耗时耗力了，
+在上线时，还需要更深入的了解这些工具，来优化我们的工具配置和代码。</p>
+</li>
+</ul>
+<p>这些内容都耗费了我们大量的心力和时间。所以这里将我们在项目中的最佳实践，分享出来，做一个整体技术方案，介绍给大家。</p>
+<h3 id="整体介绍">整体介绍</h3><p>tinper-react是基于react库及周边技术搭建的整体复杂应用解决方案。集成了react，redux，axios，react-router，webpack等开源技术。
+并根据大量项目的实践，得出的一套最佳解决方案。帮助开发者快速搭建前端项目，又快又好地开发前端业务。</p>
+<p>首先是开发工具，webpack是一个很好很强大的工具，我们根据项目中的应用，加装了一些配置。封装成uba开发工具，帮助开发者快速生成项目，
+无忧开发，调试，打包及优化。然后是UI层，我们封装了很多的UI组件库tinper-bee，方便快速开发页面。对于复杂应用，我们使用了mirror这个
+开源的数据管理框架，将复杂的数据管理，路由操作，通过简单的api和使用方式提供给开发者，让开发者清晰简单的完成复杂应用的开发和管理。</p>
+<p>tinper-react的整体技术方案，包含了：</p>
+<ul>
+<li><a href="https://github.com/iuap-design/tinper-uba">uba开发工具</a></li>
+<li><a href="http://bee.tinper.org/">tinper-beeUI组件库</a></li>
+<li><a href="https://github.com/mirrorjs/mirror">mirror数据管理框架</a></li>
+</ul>
+<p><strong>uba</strong></p>
+<p><code>uba</code>采用微内核、多插件开发，它基于 <code>webpack</code> 封装的 <code>cli</code> 命令行工具，为了解决目前前端快速开发不足而打造，
+提供一站式项目脚手架、最佳实践初始化、本地服务调试、数据模拟、远程代理、资源编译、静态产出、性能优化等功能。
+<code>uba</code>是一个前端开发工具，可以提供多种开发场景。 核心开发人员会在远端最佳实践仓库
+<a href="https://github.com/uba-templates">uba-templates</a> 进行更新和维护，当然也可以根据所需的样式和功能提供不同的模板。
+可以给使用开发者提供轻量、简单、便捷的开发体验，让开发者从复杂的配置中脱离出来，这些复杂而又不易初学者学习的内容，
+就交给我<code>uba</code>来解决吧！</p>
+<p><strong>tinper-bee</strong></p>
+<p>tinper-bee 是基于 iuap design设计规范封装的 react 组件库，包含丰富的基础组件和应用组件，
+支持组件的灵活调用和扩展，助力快速进行应用的组件化开发。并且我们提供适用于企业级应用的表单，
+表格和grid组件，满足您大量数据的处理操作展示和复杂交互需求。</p>
+<p><strong>mirror</strong></p>
+<p>Mirror是基于redux的react数据管理框架，用极少数的 API 封装所有繁琐甚至重复的工作，
+提供一种简洁高效的更高级抽象，同时保持原有的开发模式。</p>
+<h3 id="学习指导">学习指导</h3><p>使用这套解决方案，你需要有一些基本的知识储备：</p>
+<ul>
+<li><a href="https://discountry.github.io/react/">react</a></li>
+<li><a href="http://reacttraining.cn/web/guides/quick-start">react-router v4</a></li>
+<li><a href="https://github.com/mzabriskie/axios">axios</a></li>
+</ul>
+<h2 id="快速上手">快速上手</h2><h3 id="基本开发环境">基本开发环境</h3><ul>
+<li><code>node.js</code> 软件版本需要大于<code>6.x</code>以上即可，<a href="https://nodejs.org/en/">点击下载</a>对应的包安装。</li>
+<li><code>npm</code>建议大于<code>3.x</code>以上即可。</li>
+</ul>
+<h3 id="工具的安装">工具的安装</h3><ul>
+<li>外网情况下使用<code>npm</code>安装全局使用<pre><code class="lang-bash">$ npm install uba -g      #全局安装uba
+</code></pre>
+</li>
+<li>公司内网下使用ynpm来安装<pre><code class="lang-bash">$ npm install ynpm-tool -g  #安装集团内网ynpm到全局
+$ ynpm install uba -g       #安装uba全局，后面下载npm包慢也可以使用ynpm install来安装依赖包
+</code></pre>
+</li>
+</ul>
+<h3 id="检测uba是否安装成功">检测uba是否安装成功</h3><pre><code class="lang-bash">$ uba
+</code></pre>
+<p>当出现正常的操作提示帮助表示成功安装如下：</p>
+<pre><code class="lang-bash">
+  Usage: uba &lt;command&gt; [options]
+
+
+  Command:
+
+    install        v0.0.17
+    init        v0.0.51
+    plugin        v0.0.7
+    server        v0.0.22
+    build        v0.0.5
+
+  Options:
+
+    -h, --help     output usage information
+    -v, --version  output the version number
+</code></pre>
+<h3 id="初始化在线工程">初始化在线工程</h3><p>首先浏览在线所有可用的脚手架工程，便于选择需要的继续。</p>
+<pre><code class="lang-bash">$ uba init          #查看远端的uba-templates可用工程
+</code></pre>
+<p>此时正确请求到远端数据后返回数据如下：</p>
+<pre><code class="lang-bash">Available official templates:
+? Please select:
+❯ template-iuap-react-solution - Iuap React整体解决方案脚手架
+  template-moli - template-moli
+  template-react-multiple-pages - React多页应用脚手架
+  template-react-single-pages - React单页应用脚手架
+  template-tinper-bee-admin - 采用tinper-bee组件库所构建的管理系统
+</code></pre>
+<p>选择<code>template-iuap-react-solution</code>工程，也就是<code>Iuap React</code>整体解决方案脚手架</p>
+<p>选择该项目后，按回车确认选择，接着会提示输入工程实践的名字，默认为<code>uba-boilerplate</code></p>
+<pre><code class="lang-bash">boilerplate name : (uba-boilerplate) iuap-react
+</code></pre>
+<p>输入一个合法的文件夹名字后回车，然后会看到创建刚才输入的名字为文件夹，并且会提示正在下载。</p>
+<pre><code class="lang-bash">Downloading template-iuap-react-solution please wait.
+Boilerplate iuap-react done.
+</code></pre>
+<p>接着会提示，是否要自动帮助你安装所依赖的npm包文件，按回车继续安装。如果不安装，后面可以自行去安装，使用cnpm或ynpm安装都可以。这里选择默认的npm安装。</p>
+<h3 id="启动开发服务">启动开发服务</h3><p>首先进入到我们的项目目录(初始化输入的文件夹名字)，然后运行下面的命令即可。</p>
+<pre><code class="lang-bash">$ cd iuap-react       #进入项目目录
+
+$ npm run dev         #启动开发服务，也可以运行全局的命令 uba server
+</code></pre>
+<p>稍等片刻就会自动打开默认的浏览器访问到该项目的。</p>
+<h3 id="构建静态资源">构建静态资源</h3><p>当我们的开发业务完成后，需要产出最终优化过的资源文件，也就是打包部署的部分，通过下面命令简单的执行。</p>
+<pre><code class="lang-bash">$ npm run build       #执行构建打包操作，或者使用全局命令 uba build
+</code></pre>
+<p>通过简单的一条命令就可以执行构建等一系列的优化操作，uba.config.js里面已经按照最优的配置去运行整个任务。</p>
+<pre><code class="lang-bash">[version]:0.0.5
+[uba]: Operation now, please wait
+clean-webpack-plugin: /Users/kvkens/test/uba-multiple/iuap-react/dist has been removed.
+
+Version: webpack 2.7.0
+Time: 25407ms
+                          Asset       Size  Chunks                    Chunk Names
+              logo.c545af77.png    25.6 kB          [emitted]
+    app.48d65830eb421a4a2bfd.js    1.15 MB       0  [emitted]  [big]  app
+vendors.48d65830eb421a4a2bfd.js    1.53 kB       1  [emitted]         vendors
+   app.48d65830eb421a4a2bfd.css    3.03 kB       0  [emitted]         app
+                    favicon.png    25.6 kB          [emitted]
+                     index.html  826 bytes          [emitted]
+
+[uba]: uba build success!
+</code></pre>
+<p>运行完毕后会在当前的目录下看到<code>dist</code>产出的文件夹结构，里面就是我们要部署到线上的资源工程。通过build后的日志也可以看出来webpack处理的详细信息。</p>
+<h2 id="目录介绍">目录介绍</h2><p>目录介绍及目录规范</p>
+<h3 id="项目目录">项目目录</h3><p>的截图，目录的含义</p>
+<h3 id="业务目录">业务目录</h3><p>都有哪些目录，各自放哪些资源，如何划分及说明</p>
+<h2 id="Step By Step">Step By Step</h2><h3 id="添加路由">添加路由</h3><h3 id="添加页面">添加页面</h3><h3 id="划分组件">划分组件</h3><h3 id="定义数据模型">定义数据模型</h3><h3 id="连接数据模型和组件">连接数据模型和组件</h3><h3 id="发送请求">发送请求</h3><h3 id="mock数据">mock数据</h3><h3 id="其他功能介绍（包含环境变量，测试及其他uba）">其他功能介绍（包含环境变量，测试及其他uba）</h3><h2 id="与后端对接联调">与后端对接联调</h2><p>方案说明</p>
+<h2 id="开发规范">开发规范</h2><p><a href="https://github.com/iuap-design/YY-Code-Guide">我们的前端规范</a></p>
+<ul>
+<li>沟通</li>
+</ul>
+<p>第一个建议是沟通，做过了这么多项目，发现良好的沟通，最能显著提高开发效率，要多与协作的前端沟通，有好的实践一起分享，
+有通用的功能或组件一起复用。多于UE沟通，能减少很多UI的返工的工作。多于后端沟通，能加快前后台联调的效率。所以，
+我们在开发中，要尽量找机会多沟通。</p>
+<ul>
+<li>规范</li>
+</ul>
+<p>项目协作开发，要在开始时，制定好一致的开发规范，目录规范，代码规范。对于项目维护，重构都有很大的好处。</p>
+<ul>
+<li>持续改进</li>
+</ul>
+<p>在开发过程中，要不断审计自己的代码。寻找可以改进的地方，不停的优化和重构自己的代码。</p>
+<h2 id="兼容性说明">兼容性说明</h2><p>目前，此方案只兼容到ie9,对于再低版本的浏览器，我们建议这样的用户进行浏览器升级。</p>
+<p>对于ie，你需要引入promise兼容方案：</p>
+<pre><code>&lt;script src=&quot;//design.yonyoucloud.com/static/yonyouyun/es6-promise.auto.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+        <div class="col-md-3" role="complementary">
+            <nav class="docs-sidebar hidden-print hidden-xs hidden-sm">
+                <ul class="nav docs-sidenav">
+                    
+                    
+                    <li>
+                        
+                        <a href="#概述" >概述</a>
+                        
+                    </li>
+                    
+                    
+                    
+                    
+                    <ul class="nav" style="display:block">
+                    
+                        <li>
+                            <a href="#初心" >初心</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#整体介绍" >整体介绍</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#学习指导" >学习指导</a>
+                        </li>
+                    
+                    </ul>
+                    
+                    
+                    
+                    
+                    <li>
+                        
+                        <a href="#快速上手" >快速上手</a>
+                        
+                    </li>
+                    
+                    
+                    
+                    
+                    <ul class="nav" style="display:block">
+                    
+                        <li>
+                            <a href="#基本开发环境" >基本开发环境</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#工具的安装" >工具的安装</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#检测uba是否安装成功" >检测uba是否安装成功</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#初始化在线工程" >初始化在线工程</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#启动开发服务" >启动开发服务</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#构建静态资源" >构建静态资源</a>
+                        </li>
+                    
+                    </ul>
+                    
+                    
+                    
+                    
+                    <li>
+                        
+                        <a href="#目录介绍" >目录介绍</a>
+                        
+                    </li>
+                    
+                    
+                    
+                    
+                    <ul class="nav" style="display:block">
+                    
+                        <li>
+                            <a href="#项目目录" >项目目录</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#业务目录" >业务目录</a>
+                        </li>
+                    
+                    </ul>
+                    
+                    
+                    
+                    
+                    <li>
+                        
+                        <a href="#Step By Step" >Step By Step</a>
+                        
+                    </li>
+                    
+                    
+                    
+                    
+                    <ul class="nav" style="display:block">
+                    
+                        <li>
+                            <a href="#添加路由" >添加路由</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#添加页面" >添加页面</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#划分组件" >划分组件</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#定义数据模型" >定义数据模型</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#连接数据模型和组件" >连接数据模型和组件</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#发送请求" >发送请求</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#mock数据" >mock数据</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#其他功能介绍（包含环境变量，测试及其他uba）" >其他功能介绍（包含环境变量，测试及其他uba）</a>
+                        </li>
+                    
+                    </ul>
+                    
+                    
+                    
+                    
+                    <li>
+                        
+                        <a href="#与后端对接联调" >与后端对接联调</a>
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        <a href="#开发规范" >开发规范</a>
+                        
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        
+                        <a href="#兼容性说明" >兼容性说明</a>
+                        
+                    </li>
+                    
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    
+</div>
+
+<!-- Footer
+================================================== -->
+<footer class="docs-footer" role="contentinfo">
+    <div class="container">
+        <p>Made By YonYouFED. © 2014 - 2016</p>
+    </div>
+</footer>
+
+<script src="source/jquery.min.js"></script>
+<script src="source/bootstrap.min.js"></script>
+<script src="source/docs.min.js"></script>
+<script src="source/highlight.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('code').each(function(i, block) {
+            if (block.innerHTML.indexOf('\n') != -1) {
+                var pn = block.parentNode;
+                if (pn.tagName.toUpperCase() == 'PRE') {
+                    try {
+                        hljs.highlightBlock(block);
+                    } catch(e) {}
+                } else {
+                    pn.innerHTML = '<pre><code>' + block.innerHTML + '</code></pre>';
+                    try {
+                        hljs.highlightBlock(pn.childNodes[0].childNodes[0]);
+                    } catch(e) {}
+                }
+            }
+        });
+
+        var winHeight = $(window).height() - 40,
+            sidebar = $('.docs-sidebar');
+
+        if (sidebar.height() > winHeight) {
+
+            sidebar.css('max-height', winHeight + 'px');
+            sidebar.css('overflow', 'scroll');
+
+            var activeMenu,
+                barScroll = false;
+
+            sidebar.on('mouseover', function() {
+                barScroll = true;
+            });
+
+            sidebar.on('mouseout', function() {
+                barScroll = false;
+            });
+            if (!barScroll) {
+                var activeItem = $('.docs-sidebar li.active a');
+                if (activeItem.length) {
+                    if (!activeMenu || (activeMenu.attr('href') != activeItem.attr('href'))) {
+                        activeMenu = activeItem;
+                        var top = activeMenu.offset().top - sidebar.offset().top;
+                        if (top < 0) {
+                            sidebar.scrollTop(sidebar.scrollTop() + top);
+                        } else if (top > winHeight - 30) {
+                            sidebar.scrollTop(sidebar.scrollTop() + top - winHeight + 30);
+                        }
+                    }
+                }
+            }
+            $(window).on('scroll', function(e) {
+                if (!barScroll) {
+                    var activeItem = $('.docs-sidebar li.active a');
+                    if (activeItem.length) {
+                        if (!activeMenu || (activeMenu.attr('href') != activeItem.attr('href'))) {
+                            activeMenu = activeItem;
+                            var top = activeMenu.offset().top - sidebar.offset().top;
+                            if (top < 0) {
+                                sidebar.scrollTop(sidebar.scrollTop() + top);
+                            } else if (top > winHeight - 30) {
+                                sidebar.scrollTop(sidebar.scrollTop() + top - winHeight + 30);
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>
