@@ -1,5 +1,5 @@
 import React from 'react';
-import mirror, { render, Router } from 'tinper-mirrorx';
+import mirror, { render, Router } from 'mirrorx';
 import { App } from 'containers';
 
 import './index.less';

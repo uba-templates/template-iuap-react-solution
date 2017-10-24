@@ -2,7 +2,7 @@ import {Component} from 'react';
 import {Welcome, Menus, Header} from 'components';
 import {Con, Icon} from 'tinper-bee';
 import classnames from 'classnames';
-import mirror, { connect, actions } from 'tinper-mirrorx';
+import mirror, { connect, actions } from 'mirrorx';
 import menuModel from 'model/menu';
 
 import './index.less';
