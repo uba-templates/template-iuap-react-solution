@@ -24,20 +24,37 @@
             "content": "./docs/index.md"
         },
         {
-          "title": "PC组件库tinper-bee",
-          "url": "http://bee.tinper.org/"
+            "title": "PC组件库tinper-bee",
+            "url": "http://bee.tinper.org/"
         },
         {
-          "title": "移动组件库lebra",
-          "url": "https://github.com/lebra/lebra-components"
+            "title": "移动组件库lebra",
+            "url": "https://github.com/lebra/lebra-components"
         },
         {
-          "title": "应用框架Mirror",
-          "url": "http://bee.tinper.org/"
+            "title": "应用框架Mirror",
+            "url": "http://bee.tinper.org/"
         },
         {
-          "title": "业务组件平台",
-          "url": "https://github.com/tinper-bee/bee-application-components"
+            "title": "业务组件平台",
+            "url": "https://github.com/tinper-bee/bee-application-components"
+        },
+        {
+            "name": "build",
+            "title": "实战资料",
+            "banner": {
+                "title": "创建项目~！"
+            },
+            "content": "./docs/build.md"
+        },
+        {
+            "name": "other",
+            "title": "扩展资料",
+            "sidebar": true,
+            "banner": {
+                "title": "其他资料~！"
+            },
+            "content": "./docs/ES6.md"
         },
         {
             "name": "more",
@@ -49,5 +66,4 @@
             "content": "./docs/more.md"
         }
     ]
-
 }

@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tinper-react 实战资料</title>
+    <link rel="stylesheet" href="source/app.css"/>
+    <link rel="stylesheet" href="source/highlight.min.css">
+</head>
+<body>
+<a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
+
+
+<!-- Docs master nav -->
+<header class="navbar navbar-static-top docs-nav" id="top" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a href="" class="navbar-brand">tinper-react</a>
+            
+        </div>
+        <nav id="bs-navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                    
+                    <li class="">
+                        
+                        <a href="index.html">开发框架</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
+                        <a href="http://bee.tinper.org/" target="_blank">PC组件库tinper-bee</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
+                        <a href="https://github.com/lebra/lebra-components" target="_blank">移动组件库lebra</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
+                        <a href="http://bee.tinper.org/" target="_blank">应用框架Mirror</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
+                        <a href="https://github.com/tinper-bee/bee-application-components" target="_blank">业务组件平台</a>
+                        
+                    </li>
+                    
+                    <li class="active">
+                        
+                        <a href="build.html">实战资料</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
+                        <a href="other.html">扩展资料</a>
+                        
+                    </li>
+                    
+                    <li class="">
+                        
+                        <a href="more.html">更多</a>
+                        
+                    </li>
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Docs page layout -->
+
+<div class="docs-header" id="content" style="margin-bottom:0">
+    <div class="container">
+        <h1>创建项目~！</h1>
+        <p></p>
+    </div>
+</div>
+
+
+
+<header style="height:20px"></header>
+
+
+<div class="container docs-container">
+    
+    
+    <div class="row">
+        <div class="col-md-9 markdown-body" role="main">
+            
+            <h2 id="uba环境搭建">uba环境搭建</h2><h3 id="node安装：">node安装：</h3><h3 id="安装 node 环境来处理react项目的包管理">安装 node 环境来处理react项目的包管理</h3><ul>
+<li><code>node.js</code> 软件版本需要大于<code>6.x</code>以上即可</li>
+<li><code>npm</code>建议大于<code>3.x</code>以上即可。</li>
+</ul>
+<h3 id="安装node地址">安装node地址</h3><p><a href="http://www.nodejs.org/download/">node下载地址</a></p>
+<p><img src="../src/assets/images/reactfile/nodedown.jpg" alt="nodedown"></p>
+<h3 id="安装node教程">安装node教程</h3><p>选择电脑系统对应的版本下载即可，下载完成安装nodejs，安装过程基本直接“NEXT”就可以了。（windows的安装msi文件在过程中会直接添加path的系统变量，变量值是你的安装路径，例如“C:\Program Files\nodejs”）。</p>
+<h3 id="检测node安装是否成功">检测node安装是否成功</h3><p>安装完成后可以使用cmd（win+r然后输入cmd进入）测试下是否安装成功。方法：在cmd下输入node -v，出现下图版本提示就是完成了NodeJS的安装。</p>
+<p>（mac安装完成查看版本）</p>
+<p><img src="../src/assets/images/reactfile/node版本.jpg" alt="node版本"></p>
+<p>（windows安装完成查看版本）<img src="../src/assets/images/reactfile/window版本.jpg" alt="window版本"></p>
+<h3 id="npm介绍">npm介绍</h3><p>npm的安装。由于新版的NodeJS已经集成了npm，所以之前npm也一并安装好了。同样可以使用cmd命令行输入&quot;npm -v&quot;来测试是否成功安装。如下图，出现版本提示便OK了。</p>
+<h3 id="安装完成">安装完成</h3><p>常规NodeJS的搭建到现在为止已经完成了，急不及待的话你可以在”cmd“输入”node“进入node开发模式下，输入你的NodeJS第一句：”hello world“ - 输入：console.log(&#39;hello world&#39;)。</p>
+<h3 id="window版本配置环境变量">window版本配置环境变量</h3><p>npm作为一个NodeJS的模块管理，之前我由于没有系统地看资料所以导致安装配置模块的时候走了一大段弯路，所以现在很有必要列出来记录下。(windows配置一下)</p>
+<p>①、我们要先配置npm的全局模块的存放路径以及cache的路径，例如我希望将以上两个文件夹放在NodeJS的主目录下，便在NodeJs下建立&quot;node_global&quot;及&quot;node_cache&quot;两个文件夹。如下图<img src="../src/assets/images/reactfile/windows环境.jpg" alt="windows环境"></p>
+<p>②、启动cmd，输入</p>
+<pre><code>npm config set prefix &quot;C:\Program Files\nodejs\node_global&quot;
+以及
+npm config set cache &quot;C:\Program Files\nodejs\node_cache&quot;
+</code></pre><p>③、现在我们来装个模块试试，选择express这个比较常用的模块。同样在cmd命令行里面，输入“npm install express -g”（“-g”这个参数意思是装到global目录下，也就是上面说设置的“C:\Program Files\nodejs\node_global”里面。）。待cmd里面的安装过程滚动完成后，会提示“express”装在了哪、版本还有它的目录结构是怎样。如下图<img src="../src/assets/images/reactfile/测试模块.jpg" alt="测试模块"></p>
+<p>④、关闭cmd，打开系统对话框，“我的电脑”右键“属性”-“高级系统设置”-“高级”-“环境变量”。如下图</p>
+<p><img src="../src/assets/images/reactfile/环境变量.jpg" alt="环境变量"></p>
+<p>⑤、进入环境变量对话框，在系统变量下新建&quot;NODE_PATH&quot;，输入”C:\Program Files\nodejs\node_global\node_modules“。（ps：这一步相当关键。）</p>
+<p>2014.4.19新增：由于改变了module的默认地址，所以上面的用户变量都要跟着改变一下（用户变量&quot;PATH&quot;修改为“C:\Program Files\nodejs\node_global\”），要不使用module的时候会导致输入命令出现“xxx不是内部或外部命令，也不是可运行的程序或批处理文件”这个错误。</p>
+<p>⑥、以上步骤都OK的话，我们可以再次开启cmd命令行，进入node，输入“require(&#39;express&#39;)”来测试下node的模块全局路径是否配置正确了。正确的话cmd会列出express的相关信息。如下图（如出错一般都是NODE_PATH的配置不对，可以检查下第④⑤步）<img src="../src/assets/images/reactfile/node.jpg" alt="node"></p>
+<h3 id="uba初始化工程">uba初始化工程</h3><h4 id="1、基于node安装完成后，来安装 用友React项目初始化工具  uba;">1、基于node安装完成后，来安装 用友React项目初始化工具  uba;</h4><p><a href="http://docs.tinper.org/uba/">uba 教程</a></p>
+<p>外网情况下使用<code>npm</code>安装全局使用</p>
+<pre><code class="lang-bash">$ npm install uba -g      #全局安装uba
+</code></pre>
+<p>公司内网下使用ynpm来安装</p>
+<pre><code class="lang-bash">$ npm install ynpm-tool -g  #安装集团内网ynpm到全局
+$ ynpm install uba -g       #安装uba全局，后面下载npm包慢也可以使用ynpm install来安装依赖包
+</code></pre>
+<h4 id="2、安装完成后查看 uba 版本">2、安装完成后查看 uba 版本</h4><p>检测uba是否安装成功</p>
+<pre><code>uba -v
+</code></pre><p><img src="../src/assets/images/reactfile/uba版本.jpg" alt="uba版本"></p>
+<h4 id="3、安装完 脚手架工具uba 之后  初始化项目">3、安装完 脚手架工具uba 之后  初始化项目</h4><pre><code>uba init
+</code></pre><p><img src="../src/assets/images/reactfile/ubainit.jpg" alt="ubainit"></p>
+<p>uba init 回车出现上图，我们根据需求 选择对应 脚手架。包括 单页应用、多页应用等。</p>
+<h4 id="4、今天我们以React多页应用脚手架为力来实现 币种案例。选择React 多页应用脚手架 回车，初始化项目文件目录以及基本文件。为项目命名如下图。">4、今天我们以React多页应用脚手架为力来实现 币种案例。选择React 多页应用脚手架 回车，初始化项目文件目录以及基本文件。为项目命名如下图。</h4><p><img src="../src/assets/images/reactfile/setname.jpg" alt="setname"></p>
+<h4 id="5、是否初始化node_modules,此处选择y；回车。开始加载">5、是否初始化node_modules,此处选择y；回车。开始加载</h4><p><img src="../src/assets/images/reactfile/nodeiniting.jpg" alt="nodeiniting"></p>
+<p><img src="../src/assets/images/reactfile/nodeinit.jpg" alt="nodeinit"></p>
+<p><img src="../src/assets/images/reactfile/inited.jpg" alt="inited"></p>
+<h4 id="6、项目文件以及文件夹说明：">6、项目文件以及文件夹说明：</h4><p>项目初始化成功后查看目录文件。<img src="../src/assets/images/reactfile/ubafile.jpg" alt="ubafile"></p>
+<p>此项目中：</p>
+<pre><code> mock 文件夹📂存放本地模拟请求数据文件，node_modules存放项目所用包数据文件，
+</code></pre><pre><code>package.json文件📃写入该项目使用的包名以及启动、构建、等命令（可以自行配置）。
+在前端工程中，安装插件或库：
+
+添加 package到： dependencies
+npm install &lt;package-name&gt; --save 或
+npm install &lt;package-name&gt;
+
+添加 package到： devDependencies
+npm install &lt;package-name&gt; --save-dev
+
+区别在于：
+dependencies中的依赖项是正常运行该包所需要的依赖项；
+devDependencies中的依赖项是开发的时候所需要的依赖项，比如一些进行单元测试之类的包；
+dependencies中，是生产环境所需要的库；
+devDependencies中，放的是你开发时候用到的库，比如测试库等等，在生产环境中是不需要的；
+那什么是开发环境，什么是生产环境呢？
+下面一张图告诉你：
+</code></pre><p><img src="../src/assets/images/reactfile/开发环境和生产环境说明.png" alt="开发环境和生产环境说明"></p>
+<pre><code>README.md文件📃存放项目说明以便于团队开发保持项目的统一性和易管理性。
+</code></pre><pre><code>src文件夹用于存放项目的js文件和组件以及css，图片，font字体等
+其中 assets 文件夹📂用于存放 images(就是图片文件夹)；
+components文件夹📂用于存放 公用组件；
+pages文件夹📂用于存放 页面逻辑js以及页面元素编写逻辑。
+前端开发人员需要配合后端人员完成项目的页面编写接口数据处理，以及数据缺失补充和友好页面提示防止页面出现不必要的错误提示。
+</code></pre><pre><code>uba.config.js文件📃是项目重要配置文件包括端口号配置，代理模式切换，公用变量配置，入口文件配置，以及文件解析**-loader的预设置。
+</code></pre><pre><code>uba.mock.js文件📃是uba模拟本地数据请求配置文件，文件指定GET方式请求本地数据路径，POST方式请求本地数据路径等配置。
+</code></pre><h4 id="7、启动项目">7、启动项目</h4><p>初始化完成。cd 到目录。使用 uba server命令来启动项目。<img src="../src/assets/images/reactfile/ubaserver.jpg" alt="ubaserver"></p>
+<p>###概述</p>
+<h3 id="初心">初心</h3><p>我们为什么要做这个整体解决方案。</p>
+<p>第一点，现在前端生态很好，各种框架和类库层出不穷，质量和易用性也是参差不齐。对于每一个项目，复杂的前端选型过程带给我们沉重的负担。</p>
+<p>第二点，当我们好不容易做好了技术选型，又要花很多时间来拼凑他们，并且需要沉淀很长时间，踩很多的坑，来得到一个比较好的实践。</p>
+<p>第三点，现在前端工程日益复杂，目前主流的方案，都需要依赖于webpack或是其他工具来辅助开发。配置开发工程已经很需要耗时耗力了，
+在上线时，还需要更深入的了解这些工具，来优化我们的工具配置和代码。</p>
+<p>这些内容都耗费了我们大量的心力和时间。所以这里将我们在项目中的最佳实践，分享出来，做一个整体技术方案，介绍给大家。</p>
+<h3 id="整体介绍">整体介绍</h3><p>tinper-react是基于react库及周边技术搭建的整体复杂应用解决方案。集成了react，redux，axios，react-router，webpack等开源技术。
+并根据大量项目的实践，得出的一套最佳解决方案。帮助开发者快速搭建前端项目，又快又好地开发前端业务。</p>
+<p>首先是开发工具，webpack是一个很好很强大的工具，我们根据项目中的应用，加装了一些配置。封装成uba开发工具，帮助开发者快速生成项目，
+无忧开发，调试，打包及优化。然后是UI层，我们封装了很多的UI组件库tinper-bee，方便快速开发页面。对于复杂应用，我们使用了mirror这个
+开源的数据管理框架，将复杂的数据管理，路由操作，通过简单的api和使用方式提供给开发者，让开发者清晰简单的完成复杂应用的开发和管理。</p>
+<p>tinper-react的整体技术方案，包含了：</p>
+<ul>
+<li><a href="https://github.com/iuap-design/tinper-uba">uba开发工具</a></li>
+<li><a href="http://bee.tinper.org/">tinper-beeUI组件库</a></li>
+<li><a href="https://github.com/mirrorjs/mirror">mirror数据管理框架</a></li>
+</ul>
+<p><strong>uba</strong></p>
+<p><code>uba</code>采用微内核、多插件开发，它基于 <code>webpack</code> 封装的 <code>cli</code> 命令行工具，为了解决目前前端快速开发不足而打造，
+提供一站式项目脚手架、最佳实践初始化、本地服务调试、数据模拟、远程代理、资源编译、静态产出、性能优化等功能。
+<code>uba</code>是一个前端开发工具，可以提供多种开发场景。 核心开发人员会在远端最佳实践仓库
+<a href="https://github.com/uba-templates">uba-templates</a> 进行更新和维护，当然也可以根据所需的样式和功能提供不同的模板。
+可以给使用开发者提供轻量、简单、便捷的开发体验，让开发者从复杂的配置中脱离出来，这些复杂而又不易初学者学习的内容，
+就交给我<code>uba</code>来解决吧！</p>
+<p><strong>tinper-bee</strong></p>
+<p>tinper-bee 是基于 iuap design设计规范封装的 react 组件库，包含丰富的基础组件和应用组件，
+支持组件的灵活调用和扩展，助力快速进行应用的组件化开发。并且我们提供适用于企业级应用的表单，
+表格和grid组件，满足您大量数据的处理操作展示和复杂交互需求。</p>
+<p><strong>mirror</strong></p>
+<p>Mirror是基于redux的react数据管理框架，用极少数的 API 封装所有繁琐甚至重复的工作，
+提供一种简洁高效的更高级抽象，同时保持原有的开发模式。</p>
+<h3 id="学习指导">学习指导</h3><p>使用这套解决方案，你需要有一些基本的知识储备：</p>
+<ul>
+<li><a href="https://discountry.github.io/react/">react</a></li>
+<li><a href="http://reacttraining.cn/web/guides/quick-start">react-router v4</a></li>
+<li><a href="https://github.com/mzabriskie/axios">axios</a></li>
+</ul>
+<h2 id="基于Tinper-bee中的table组件和其他组件 来实现币种表案例">基于Tinper-bee中的table组件和其他组件 来实现币种表案例</h2><h3 id="目录结构">目录结构</h3><p>1、上一章我们讲解了使用uba来搭建一个项目，正如大家所看到的 使用uba 搭建一个项目是如此简单，搭建出项目环境只是我们项目的第一步，这一章我们来讲一下利用tinper-bee组件来实现一个currencv table （币种表），通过这个表我们能够初步了解 利用React、es6 编写项目配合tinper-bee组件迅速实现美观大方的页面是非常愉快的一件事。什么是tinper-bee呢？简单说一下 <a href="http://bee.tinper.org/">tinper-bee</a> tinper-bee 是基于 iuap design 的 react 组件库，包含丰富的基础组件和应用组件，支持组件的灵活调用和扩展，助力快速进行应用的组件化开发。React 是一个采用声明式，高效而且灵活的用来构建用户界面的框架。<a href="https://doc.react-china.org/tutorial/tutorial.html">react开发中文版教程网址</a>  </p>
+<h4 id="丰富的基础组件">丰富的基础组件</h4><p>包含大量简单易用的基础组件，支持快速搭建页面和构建您的个人应用。</p>
+<h4 id="企业级特性组件">企业级特性组件</h4><p>提供适用于企业级应用的表单，表格和grid组件，满足您大量数据处理操作展示和复杂交互需求。</p>
+<h4 id="支持强大的组件扩展和自定义">支持强大的组件扩展和自定义</h4><p>每个组件提供了丰富的API接口和充分自由度给用户来定义自己的组件，实现用户想要的效果和特性。</p>
+<p>上面tinper-bee网址中有更多更详细的tinder-bee的介绍，在此我们不做过多的介绍，开始来说一下我们构建币种项目的目录结构；</p>
+<p>2、首先看一下项目实现效果：</p>
+<p><img src="../src/assets/images/reactfile/currency/content.jpeg" alt="content"></p>
+<p>币种表单简单的实现了数据展示，数据编辑，数据添加，数据删除功能。</p>
+<p><img src="../src/assets/images/reactfile/currency/目录结构.jpg" alt="目录结构"></p>
+<p>3、如图所示，assets文件存📂放 images文件夹📂，components文件夹📂存放公用组件，pages 文件夹📂存放页面文件，pages分为 app、currency、default、index文件夹；</p>
+<h3 id="文件讲解">文件讲解</h3><p>1、首先我们从index文件夹开始说起，正如大家所了解的，这个项目为多页项目，所以我们这个项目分为多个页面，每个页面分为一个文件夹📂，方便管理的规则，目录清晰。index文件夹内分文，index.js,index.css,index.html;此处在uba.donfig.js内配置，页面入口。</p>
+<pre><code>//dev多入口配置
+glob.sync(&quot;./src/pages/*/index.js&quot;).forEach(path =&gt; {
+  const chunk = path.split(&quot;./src/pages/&quot;)[1].split(&quot;/index.js&quot;)[0];
+  entries[chunk] = [path, hotMiddlewareScript];
+  chunks.push(chunk);
+});
+</code></pre><p>2、我们首先看 index文件夹中的index.html</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh-CN&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+  &lt;title&gt;Index&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;//design.yonyoucloud.com/static/tinper-bee/0.6.2/assets/tinper-bee.min.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+  &lt;script src=&quot;//design.yonyoucloud.com/static/babel-polyfill/6.26.0/polyfill.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;//design.yonyoucloud.com/static/react/15.6.1/react.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;//design.yonyoucloud.com/static/react/15.6.1/react-dom.min.js&quot;&gt;&lt;/script&gt;
+   &lt;script src=&quot;//design.yonyoucloud.com/static/tinper-bee/0.6.2/build/tinper-bee.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>通过上面的代码可以看出，首先我们引入了tinper-bee.min.css 地址为线上地址，此处较大的文件 引入线上地址来减少打包后的项目体积。此处script 引入了，polyfill.min.js 处理IE低版本浏览器不兼容问题，和react核心代码react.min.js 和react-dom.min.js 和我们组件库核心代码 tinper-bee.js;很显眼的一个div id=‘app’的元素用于存放我们逻辑处理后的元素。相当于一个容器便于页面切换和元素变换。</p>
+<p>3、我们又看一下index文件夹中的index.js</p>
+<pre><code>//引入react核心代码定义变量为React；
+import React from &#39;react&#39;;
+//引入react 渲染代码 定义为ReactDOM;
+import ReactDOM from &#39;react-dom&#39;;
+//引入项目的核心代码 路由入口代码；
+import App from &#39;../app/index&#39;
+//引入 mirrorx 阿里封装的redux代码；
+import mirror, { Router, Route, render ,hashHistory} from &#39;mirrorx&#39;;
+//引入 css文件；来修饰 页面元素样式；
+import &#39;./index.css&#39;;
+//此处获取页面app元素，来存放我们页面的输出页面；
+const content = document.querySelector(&quot;#app&quot;);
+//此处定义 mirror的配置路由模式为hash；
+mirror.defaults({
+    historyMode: &#39;hash&#39;
+});
+//使用mirrorx中的render方法来渲染页面。
+render(&lt;Router&gt;&lt;App /&gt;&lt;/Router&gt;, content);
+</code></pre><p>通过上面代码来看index.js是核心代码，引入需要的代码，渲染页面。</p>
+<p>4、我们再看一下index.css ，或者index.less;</p>
+<pre><code>.Test{
+  color : &quot;green&quot;;
+  background: url(&quot;../../assets/images/jay.jpg&quot;) no-repeat center center;
+}
+.uf{
+  font-size: 16px;
+}
+.u-breadcrumb{
+  margin: 0;
+  margin-bottom: 20px;
+}
+</code></pre><p>此处代码就是定义元素的显示方式，以及背景图片，字体大小等。</p>
+<p>5、app文件夹代码解析。</p>
+<p>app文件夹📂中的index.js</p>
+<pre><code>//引入react核心代码；
+import React, { Component } from &#39;react&#39;;
+//引入mirrorx中的路由；
+import { Router, Route } from &#39;mirrorx&#39;;
+//引入classnames 来处理 元素样式的逻辑判断。下面会单独说classnames的用法。
+import classnames from &#39;classnames&#39;;
+//重点来了，此处引入 tinper-bee的组件 Icon和Con两个组件。
+import { Icon, Con } from &#39;tinper-bee&#39;;
+// 引入组件来实现路由切换;
+import Def from &#39;../default/index&#39;;
+import Main from &#39;../main/index&#39;;
+import AddList from &#39;../currency/index&#39;;
+import Menus from &#39;components/Menus/index&#39;;
+import MyHeader from &#39;components/MyHeader/index&#39;;
+//引入样式;
+import &#39;./index.css&#39;;
+//定义 App组件
+export default class App extends Component {
+    constructor(props) {
+    //此处是props集成字Component
+        super(props);
+        //该组件的状态，通过状态来控制页面逻辑、数据等。
+        this.state = {
+            toggle: false
+        }
+    }
+    // 展开收起菜单(定义事件操作元素)
+    handleToggle = () =&gt; {
+        this.setState({
+            toggle: !this.state.toggle
+        })
+    }
+    //页面渲染
+    render() {
+    //定义变量 使用es6结构方法获取变量，此处有ES6的语法讲解的详情文档就会一目了然。
+        const { toggle } = this.state;
+        return (
+            //此处为 元素行内样式写法，但不建议如此写法，最好用className来修饰元素，页面不会乱，方便管理；
+            &lt;div style={{ height: &#39;100%&#39; }}&gt;
+                //react 的class写法是className 为了避免 定义class的语法冲突，所以css 的class必须使用className来修饰元素，classnamse组件来实现样式逻辑。
+                &lt;div className={classnames(&quot;side-bar&quot;, { &quot;toggled&quot;: toggle })}&gt;
+                    //下面代码为是根据toggle的状态来控制 显示Icon图标还是img图片标签；
+                    {
+                        toggle ? (
+                            &lt;Icon type=&quot;uf-iuap-col&quot; className=&quot;nav-icon&quot; /&gt;
+                        ) : (&lt;img src=&quot;//design.yonyoucloud.com/static/img/designer/logo.png&quot;
+                        /&gt;)
+                    }
+                    //此处引入公用Menus组件；
+                    &lt;Menus toggle={toggle} /&gt;
+                &lt;/div&gt;
+                &lt;div className={classnames(&quot;content&quot;, { &quot;toggled&quot;: toggle })}&gt;
+                    &lt;MyHeader toggle={toggle} onToggle={this.handleToggle} /&gt;
+                    &lt;Con fluid={true}&gt;
+                        &lt;Route exact path=&quot;/&quot; component={Def} /&gt;
+                        &lt;Route path=&quot;/AddList&quot; component={AddList} /&gt;
+                        &lt;Route path=&quot;/Mains&quot; component={Main} /&gt;
+                    &lt;/Con&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre><p>上面代码有点多，我们一步一步解析，另外也可以参考代码内注释，方便理解。代码分为两部分，上半部分为引入部分，来引用我们公用的组件公用的库，公用的样式等文件，此处不做过多的解释，下半部分为定义默认组件并且输出去。</p>
+<pre><code>export default class App extends Component //定义并输出组件，export 输出 defualt 默认 class 组件 为App名字的组件。
+</code></pre><p>此处代码是定义组件继承和定义状态</p>
+<pre><code> constructor(props) {
+    //此处是props集成字Component
+        super(props);
+        //该组件的状态，通过状态来控制页面逻辑、数据等。
+        this.state = {
+            toggle: false
+        }
+    }
+</code></pre><p>此处代码是定义事件方法并且修改组件状态来达到与页面互动的效果</p>
+<pre><code> // 展开收起菜单(定义事件操作元素)
+    handleToggle = () =&gt; {
+        //在组件内this 代表组件本身，this.state 可以直接获取组件状态  this.setState 方法来改变 组件的state状态。
+        this.setState({
+            toggle: !this.state.toggle
+        })
+    }
+</code></pre><p>render方法的使用</p>
+<pre><code> //页面渲染
+    render() {
+    //定义变量 使用es6结构方法获取变量，此处有ES6的语法讲解的详情文档就会一目了然。
+        const { toggle } = this.state;
+        return出去在react 16版本之前只允许 输出一个元素就是顶级元素多了就会报错，16版本之后就可以return 数组如：return [
+             &lt;div&gt;222&lt;/div&gt;,
+            &lt;div&gt;222&lt;/div&gt;,
+        ]；
+        可以return 字符串 如： return &#39;我是一个静态字符串，我负责渲染名字&#39;等。
+        return (&lt;div&gt;我是输出的元素&lt;/div&gt;)
+        }
+</code></pre><p>6、下面我们介绍币种组件代码；currency组件；</p>
+<p>先看index.js 代码</p>
+<pre><code>/**引入核心代码 css样式**/
+import React, { Component } from &#39;react&#39;;
+import { Link } from &#39;mirrorx&#39;;
+import { Row, Col, Panel, Table, Select, Button, Modal, Form, FormControl, FormGroup, InputGroup, Icon, Input, Popconfirm, Animate, ControlLabel } from &#39;tinper-bee&#39;;
+import &#39;./index.css&#39;;
+</code></pre><p>定义组件</p>
+<pre><code>class AddList extends Component
+</code></pre><p>定义组件状态 以及表格所用数据；因为是前端代码，目前数据模拟为本地数据，后续会单独说对接后台请求数据；</p>
+<pre><code>constructor(props) {
+        super(props);
+        // 定义表格表头
+        this.columns = [
+            { title: &quot;币种&quot;, dataIndex: &quot;name&quot;, key: &quot;name&quot;, width: &quot;30%&quot; },
+            { title: &quot;编码&quot;, dataIndex: &quot;code&quot;, key: &quot;code&quot; },
+            { title: &quot;精度&quot;, dataIndex: &quot;currdigit&quot;, key: &quot;currdigit&quot; },
+            { title: &quot;状态&quot;, dataIndex: &quot;enablestatus&quot;, key: &quot;enablestatus&quot; },
+            {
+                title: &quot;删除&quot;, dataIndex: &quot;operation&quot;, key: &quot;operation&quot;,
+                render: (text, record, index) =&gt; {
+                    return (
+                        &lt;Popconfirm content=&quot;确认删除?&quot; id=&quot;aa&quot; onClose={this.onDelete(index)}&gt;
+                            &lt;Icon type=&quot;uf-del&quot; /&gt;
+                        &lt;/Popconfirm&gt;
+                    );
+                }
+            }
+        ];
+        this.state = {
+            dataSource: [
+                { key: &quot;0&quot;, name: &quot;沉鱼&quot;, code: &quot;1&quot;, currdigit: &quot;18&quot;, pk_currtype: false, enablestatus: &quot;96, 77, 89&quot;, },
+                { key: &quot;1&quot;, name: &quot;落雁&quot;, code: &quot;2&quot;, currdigit: &quot;18&quot;, pk_currtype: false, enablestatus: &quot;96, 77, 89&quot;, },
+                { key: &quot;2&quot;, name: &quot;闭月&quot;, code: &quot;3&quot;, currdigit: &quot;18&quot;, pk_currtype: false, enablestatus: &quot;96, 77, 89&quot;, },
+                { key: &quot;3&quot;, name: &quot;羞花&quot;, code: &quot;4&quot;, currdigit: &quot;18&quot;, pk_currtype: false, enablestatus: &quot;96, 77, 89&quot;, },
+            ],
+            count: 1,
+            showModal: false,
+            refCbData: [],
+            addOrChange: false,
+            changeIndex: &#39;&#39;,
+            name: &quot;&quot;,
+            code: &quot;&quot;,
+            currdigit: &quot;&quot;,
+            enablestatus: &quot;1&quot;,
+            pk_currtype: false,
+            dataLink: [],
+
+        };
+        self = this;
+    }
+</code></pre><p>初始化数据此处有一个生疏的单词就是 componentDidMount方法，这就涉及到<a href="http://www.runoob.com/react/react-component-life-cycle.html">react 组件的生命周期</a> ，生命周期包括：</p>
+<p>当组件在<strong>客户端</strong>被实例化，第一次被创建时，以下方法依次被调用：</p>
+<p>1、getDefaultProps
+2、getInitialState
+3、componentWillMount
+4、render
+5、componentDidMount</p>
+<p>当组件在<strong>服务端</strong>被实例化，首次被创建时，以下方法依次被调用：</p>
+<p>1、getDefaultProps
+2、getInitialState
+3、componentWillMount
+4、render</p>
+<pre><code>componentDidMount() {
+        this.initData();
+    }
+    // 初始化数据
+    initData = () =&gt; {
+        // axios({
+        //     method: &#39;get&#39;,
+        //     // http://10.11.65.50:9999/appdemo/train_currtype/list
+        //     // https://api.douban.com/v2/book/search?q=javascript&amp;count=1
+        //     url: &#39;http://api.douban.com/v2/book/search?q=javascript&amp;count=1    &#39;,
+        // }).then(function (res) {
+        //     console.log(res);
+        // });
+
+    }
+</code></pre><p>代码中间部分为组件的方法部分即是逻辑处理部分</p>
+<pre><code> //点击行执行方法
+ onCellChange = (index, key) =&gt; {
+        return value =&gt; {
+            const dataSource = [...this.state.dataSource];
+            dataSource[index][key] = value;
+            this.setState({ dataSource });
+        };
+    };
+    // 删除数据执行方法
+    onDelete = (index) =&gt; {
+        return () =&gt; {
+            const dataSource = [...this.state.dataSource];
+            dataSource.splice(index, 1);
+            this.setState({ dataSource });
+        };
+    };
+    ...
+</code></pre><p>最后即是渲染页面 并输出组件</p>
+<pre><code> // 渲染页面
+    render() {
+        const { dataSource, addOrChange, dataLink } = this.state;
+        const columns = this.columns;
+        var data = this.state, tac = { &#39;text-align&#39;: &#39;right&#39; }, mt = { &#39;margin-top&#39;: &#39;10px&#39; }, lmt = { &#39;margin-top&#39;: &#39;18px&#39; }
+        return (
+            &lt;div&gt;
+                &lt;Link to=&quot;/&quot;&gt;首页&lt;/Link&gt;
+                 &lt;Link to=&quot;/&quot;&gt;首页&lt;/Link&gt;
+                &lt;Modal
+                    show={this.state.showModal}
+                    onHide={this.close} &gt;
+                    &lt;Modal.Header&gt;
+                        &lt;Modal.Title&gt;{addOrChange ? &#39;修改&#39; : &#39;添加&#39;}币种信息：&lt;/Modal.Title&gt;
+                    &lt;/Modal.Header&gt;
+                    &lt;Row&gt;
+                        &lt;Modal.Body ref={(c) =&gt; { this.FormData = c }} style={tac} &gt;
+                            &lt;Col md={2} xs={2} sm={2} style={lmt}&gt;币种：&lt;/Col&gt;
+                            &lt;Col md={4} xs={4} sm={4} &gt;&lt;FormControl type=&quot;text&quot; onChange={this.valueChange.bind(this, &#39;name&#39;)} value={data.name} style={mt} /&gt;
+                            &lt;/Col&gt;
+                            &lt;Col md={2} xs={2} sm={2} style={lmt}&gt;编码：&lt;/Col&gt;
+                            &lt;Col md={4} xs={4} sm={4} &gt;&lt;FormControl type=&quot;text&quot; onChange={this.valueChange.bind(this, &#39;code&#39;)} value={data.code} style={mt} /&gt; &lt;/Col&gt;
+                            &lt;Col md={2} xs={2} sm={2} style={lmt}&gt;精度：&lt;/Col&gt;
+                            &lt;Col md={4} xs={4} sm={4} &gt;&lt;FormControl type=&quot;text&quot; onChange={this.valueChange.bind(this, &#39;currdigit&#39;)} value={data.currdigit} style={mt} /&gt;&lt;/Col&gt;
+
+                        &lt;/Modal.Body&gt;
+                    &lt;/Row&gt;
+                    &lt;Modal.Footer&gt;
+                        &lt;Button onClick={this.close} shape=&quot;border&quot; style={{ marginRight: 50 }}&gt;关闭&lt;/Button&gt;
+                        &lt;Button onClick={this.addMoreList} colors=&quot;primary&quot;&gt;{addOrChange ? &#39;修改&#39; : &#39;确认&#39;}&lt;/Button&gt;
+                    &lt;/Modal.Footer&gt;
+                &lt;/Modal&gt;
+                &lt;Button
+                    className=&quot;editable-add-btn&quot;
+                    colors=&quot;primary&quot;
+                    className=&quot;a&quot;
+                    onClick={this.handleAdd}
+                &gt;
+                    添加
+                &lt;/Button&gt;
+                &lt;Table
+                    bordered
+                    data={dataSource}
+                    columns={columns}
+                    getBodyWrapper={this.getBodyWrapper}
+                    onRowClick={this.rowClick}
+                /&gt;
+            &lt;/div&gt;)
+         }
+ //输出组件方便调用
+ export default AddList;
+</code></pre><h4 id="最后总结">最后总结</h4><p>以上代码就是一个简单的币种表格实现方式，由于涉及配置部分请根据项目不同自行配置。</p>
+<h2 id="主子表代码解析">主子表代码解析</h2><h3 id="文件目录分析">文件目录分析</h3><p>分析主子表目录结构，根据结构来分析其写法对照币种表，有哪些不同。我们看如下图，在main文件夹📂内有一个文件夹component，前文我们说过，公用组件存放在components文件夹内，而单单独页面使用的组件存放在component文件夹内，如图内所示，component内包括，addModul、edit、editHandle、等组件，这些组件都为主子表页面单独使用，使用组件，易于管理，方便复用。</p>
+<p><img src="../src/assets/images/reactfile/main/结构.jpeg" alt="结构"></p>
+<h3 id="代码查看">代码查看</h3><p>看index.js代码</p>
+<pre><code>import React, { Component } from &quot;react&quot;;
+import classnames from &#39;classnames&#39;;
+import { Table, Pagination } from &quot;tinper-bee&quot;;
+// 内部组件
+import EditModul from &quot;./component/edit&quot;;
+import Logo from &quot;./component/icon&quot;;
+import AddModul from &quot;./component/addModul&quot;;
+import SearchModul from &quot;./component/searchModul&quot;;
+import EditHandle from &quot;./component/editHandle&quot;;
+import {Link} from &#39;mirrorx&#39;;
+</code></pre><p>上面代码不多说，引入外部组件。</p>
+<pre><code>const tableColumns = [
+    {
+        dataIndex: &#39;description&#39;,
+        key: &#39;description&#39;,
+        title: &#39;备注&#39;
+    },
+    {
+        dataIndex: &#39;status&#39;,
+        key: &#39;status&#39;,
+        title: &#39;状态&#39;
+    },
+    // {
+    //     dataIndex: &#39;ipuquotaionid&#39;,
+    //     key: &#39;ipuquotaionid&#39;,
+    //     title: &#39;主键&#39;
+    // },
+    {
+        dataIndex: &#39;corp_account&#39;,
+        key: &#39;corp_account&#39;,
+        title: &#39;银行账号&#39;
+    },
+    {
+        dataIndex: &#39;processor&#39;,
+        key: &#39;processor&#39;,
+        title: &#39;录入人&#39;
+    },
+    {
+        dataIndex: &#39;processtime&#39;,
+        key: &#39;processtime&#39;,
+        title: &#39;订单日期&#39;
+    },
+    {
+        dataIndex: &#39;currencyid&#39;,
+        key: &#39;currencyid&#39;,
+        title: &#39;币种&#39;
+    },
+    {
+        dataIndex: &#39;currency_code&#39;,
+        key: &#39;currency_code&#39;,
+        title: &#39;币种编码&#39;
+    },
+    {
+        dataIndex: &#39;ecbillcode&#39;,
+        key: &#39;ecbillcode&#39;,
+        title: &#39;订单编号&#39;
+    },
+    {
+        dataIndex: &#39;contact&#39;,
+        key: &#39;contact&#39;,
+        title: &#39;联系人&#39;
+    },
+    {
+        dataIndex: &#39;phone&#39;,
+        key: &#39;phone&#39;,
+        title: &#39;联系电话&#39;
+    }
+];
+const columnsChild = [
+    { title: &quot;备注&quot;, dataIndex: &quot;productdesc&quot;, key: &quot;productdesc&quot; },
+    { title: &quot;产品&quot;, dataIndex: &quot;productname&quot;, key: &quot;productname&quot; },
+    { title: &quot;订单金额&quot;, dataIndex: &quot;purchaseamount&quot;, key: &quot;purchaseamount&quot; },
+    { title: &quot;单位&quot;, dataIndex: &quot;unit&quot;, key: &quot;unit&quot; }
+];
+</code></pre><p>定义主表和子表的表头。const 为ES6语法定义常量，不可修改。</p>
+<p>定义Main组件</p>
+<pre><code>export default class Main extends Component
+</code></pre><p>组件内部定义状态</p>
+<pre><code> constructor(props) {
+        super(props);
+        this.state = {
+            // 子表数据
+            children_data: [],
+            // 展开收起
+            toggle: false,
+            // 当前选中行数
+            curIndex: &#39;&#39;,
+            // 增加数据模块
+            isAddData: false,
+            // 搜索模块
+            isSearch: false,
+            // 编辑模块
+            isEdit: false,
+            //表格数据(此处数据应从后台获取)
+            tableData: [
+                {
+                    &#39;description&#39;: &#39;备注1&#39;,
+                    &#39;status&#39;: &#39;启用&#39;,
+                    &#39;subject&#39;: &#39;李小龙&#39;,
+                    &#39;ipuquotaionid&#39;: &#39;主键&#39;,
+                    &#39;corp_account&#39;: &#39;8888 888 8888&#39;,
+                    &#39;processor&#39;: &#39;房帅中&#39;,
+                    &#39;processtime&#39;: &#39;2012-01-09&#39;,
+                    &#39;currencyid&#39;: &#39;真&#39;,
+                    &#39;currency_code&#39;: &#39;001&#39;,
+                    &#39;ecbillcode&#39;: &#39;000021&#39;,
+                    &#39;contact&#39;: &#39;李小龙&#39;,
+                    &#39;phone&#39;: &#39;198888&#39;,
+                    &#39;key&#39;: 0,
+                    &#39;children_data&#39;: [
+                        { ipuquotationdetailid: &#39;1&#39;, productdesc: &#39;备注1&#39;, productname: &#39;产品1_1&#39;, purchaseamount: 1000, unit: &#39;元&#39;, quotationid: &#39;1&#39;, key: &#39;1&#39; },
+                        { ipuquotationdetailid: &#39;2&#39;, productdesc: &#39;备注2&#39;, productname: &#39;产品1_2&#39;, purchaseamount: 1000, unit: &#39;元&#39;, quotationid: &#39;2&#39;, key: &#39;2&#39; },
+                    ]
+                },
+                {
+                    &#39;description&#39;: &#39;假装是个备注&#39;,
+                    &#39;status&#39;: &#39;启用&#39;,
+                    &#39;subject&#39;: &#39;甄子丹&#39;,
+                    &#39;ipuquotaionid&#39;: &#39;主键&#39;,
+                    &#39;corp_account&#39;: &#39;8888 888 8888&#39;,
+                    &#39;processor&#39;: &#39;房帅中&#39;,
+                    &#39;processtime&#39;: &#39;2012-01-09&#39;,
+                    &#39;currencyid&#39;: &#39;真&#39;,
+                    &#39;currency_code&#39;: &#39;001&#39;,
+                    &#39;ecbillcode&#39;: &#39;000021&#39;,
+                    &#39;contact&#39;: &#39;甄子丹&#39;,
+                    &#39;phone&#39;: &#39;18701517173&#39;,
+                    &#39;key&#39;: 1,
+                    &#39;children_data&#39;: [
+                        { ipuquotationdetailid: &#39;1&#39;, productdesc: &#39;备注2_1&#39;, productname: &#39;产品2_1&#39;, purchaseamount: 1000, unit: &#39;元&#39;, quotationid: &#39;1&#39;, key: &#39;1&#39; },
+                    ]
+                }
+            ],
+            curKey: 1
+        };
+    }
+</code></pre><p>组件内事件方法代码，通过下面代码可以看出我们的事件，大部分都是在处理Main组件的state即状态，在修改状态的同时处理页面显示，以及数据操作。</p>
+<pre><code>// 点击菜单展开收起
+    handleToggle = () =&gt; {
+        this.setState({
+            toggle: !this.state.toggle
+        })
+    }
+    // 点击行
+    rowclick = (record, index, e) =&gt; {
+        let {tableData} = this.state, child = tableData[index].children_data;
+        this.setState({ curIndex: index, children_data: child });
+    };
+    // 点击增加按钮
+    addData = () =&gt; {
+        this.setState({
+            isAddData: true
+        })
+    }
+    // 取消添加
+    cancelAdd = () =&gt; {
+        this.setState({
+            isAddData: false
+        })
+    }
+    // 添加数据
+    addButton = (obj) =&gt; {
+        let {tableData, curKey} = this.state;
+        console.log(curKey += 1);
+        let addData = {
+            &#39;description&#39;: obj.mName,
+            &#39;status&#39;: &#39;启用&#39;,
+            &#39;subject&#39;: &#39;甄子丹&#39;,
+            &#39;ipuquotaionid&#39;: &#39;主键&#39;,
+            &#39;corp_account&#39;: &#39;8888 888 8888&#39;,
+            &#39;processor&#39;: &#39;房帅中&#39;,
+            &#39;processtime&#39;: &#39;2012-01-09&#39;,
+            &#39;currencyid&#39;: &#39;真&#39;,
+            &#39;currency_code&#39;: &#39;001&#39;,
+            &#39;ecbillcode&#39;: &#39;000021&#39;,
+            &#39;contact&#39;: obj.mUser,
+            &#39;phone&#39;: &#39;18701517173&#39;,
+            &#39;key&#39;: curKey,
+            &#39;children_data&#39;: obj.childData
+        }
+        tableData.push(addData)
+        this.setState({
+            tableData, curKey, isAddData: false
+        })
+    }
+    // 删除数据
+    deleteData = () =&gt; {
+        let {curIndex, tableData, children_data} = this.state;
+        if (curIndex === &#39;&#39;) {
+            alert(&#39;请选择删除&#39;)
+        } else {
+            tableData.splice(curIndex, 1);
+            this.setState({
+                tableData, children_data: []
+            })
+        }
+    }
+    // 编辑数据
+    handleEdit = () =&gt; {
+        this.setState({
+            isEdit: true
+        })
+    }
+    // 取消编辑
+    cancelEdit = () =&gt; {
+        this.setState({
+            isEdit: false
+        })
+    }
+    // 冻结数据
+    frozen = () =&gt; {
+        console.log(&#39;冻结数据&#39;);
+        let {curIndex, tableData, children_data} = this.state;
+        if (curIndex === &#39;&#39;) {
+            alert(&#39;请选择数据&#39;)
+        } else {
+            tableData[curIndex].status = &#39;停用&#39;;
+            console.log(tableData[curIndex]);
+            this.setState({
+                tableData
+            })
+        }
+
+    }
+    cancelFrozen = () =&gt; {
+        let {curIndex, tableData, children_data} = this.state;
+        if (curIndex === &#39;&#39;) {
+            alert(&#39;请选择数据&#39;)
+        } else {
+            tableData[curIndex].status = &#39;启用&#39;;
+            console.log(tableData[curIndex]);
+            this.setState({
+                tableData
+            })
+        }
+    }
+</code></pre><p>渲染部分代码</p>
+<pre><code> render() {
+        let sh = { height: &#39;100%&#39; },
+            {toggle, isAddData, isSearch, tableData, isEdit} = this.state;
+        return (
+            &lt;div&gt;
+                &lt;Link to=&quot;/&quot;&gt;首页&lt;/Link&gt;
+                &lt;EditModul
+                    addData={this.addData}
+                    deleteData={this.deleteData}
+                    handleEdit={this.handleEdit}
+                    frozen={this.frozen}
+                    cancelFrozen={this.cancelFrozen} /&gt;
+                &lt;EditHandle
+                    isEdit={isEdit}
+                    cancelEdit={this.cancelEdit} /&gt;
+                &lt;AddModul
+                    isAddData={isAddData}
+                    cancelAdd={this.cancelAdd}
+                    addButton={this.addButton} /&gt;
+                &lt;div&gt;{isAddData ? &quot;&quot; :
+                    &lt;div&gt;
+                        &lt;SearchModul
+                            isSearch={isSearch} /&gt;
+                        &lt;Table
+                            style={{ width: &#39;100%&#39; }}
+                            columns={tableColumns}
+                            data={tableData}
+                            onRowClick={this.rowclick}
+                            title={currentData =&gt; &lt;div&gt;标题: 我是主表&lt;/div&gt;}
+                        /&gt;
+                        &lt;Table
+                            style={{ marginTop: 40 }}
+                            columns={columnsChild}
+                            data={this.state.children_data}
+                            title={currentData =&gt; &lt;div&gt;标题: 我是子表&lt;/div&gt;}
+                        /&gt;
+                    &lt;/div&gt;
+                }&lt;/div&gt;
+
+            &lt;/div&gt;
+        );
+    }
+</code></pre><h3 id="分析子组件">分析子组件</h3><p>此处我们以简单的编辑组件为例讲解，父组件与子组件传递数据</p>
+<pre><code>import React, { Component } from &#39;react&#39;;
+import { Button } from &#39;tinper-bee&#39;;
+//引入edit样式
+require(&#39;./edit.less&#39;);
+export default class EditModul extends Component {
+    constructor(props) {
+        super(props)
+
+    }
+    render() {
+        return (
+            &lt;div className=&quot;edit_modul&quot;&gt;
+            此处通过this.props 来拿到 父组件的方法，当点击子组件的元素时，来执行父组件定义的方法，从而来实现，组件之间的相互传值，调用。
+                &lt;Button onClick={this.props.addData}&gt;增加&lt;/Button&gt;
+                &lt;Button onClick={this.props.deleteData}&gt;删除&lt;/Button&gt;
+                &lt;Button onClick={this.props.handleEdit}&gt;编辑&lt;/Button&gt;
+                &lt;Button onClick={this.props.frozen}&gt;冻结&lt;/Button&gt;
+                &lt;Button onClick={this.props.cancelFrozen}&gt;取消冻结&lt;/Button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre>
+        </div>
+        <div class="col-md-3" role="complementary">
+            <nav class="docs-sidebar hidden-print hidden-xs hidden-sm">
+                <ul class="nav docs-sidenav">
+                    
+                    
+                    <li>
+                        
+                        <a href="#uba环境搭建" >uba环境搭建</a>
+                        
+                    </li>
+                    
+                    
+                    
+                    
+                    <ul class="nav" style="display:block">
+                    
+                        <li>
+                            <a href="#node安装：" >node安装：</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#安装 node 环境来处理react项目的包管理" >安装 node 环境来处理react项目的包管理</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#安装node地址" >安装node地址</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#安装node教程" >安装node教程</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#检测node安装是否成功" >检测node安装是否成功</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#npm介绍" >npm介绍</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#安装完成" >安装完成</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#window版本配置环境变量" >window版本配置环境变量</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#uba初始化工程" >uba初始化工程</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#初心" >初心</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#整体介绍" >整体介绍</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#学习指导" >学习指导</a>
+                        </li>
+                    
+                    </ul>
+                    
+                    
+                    
+                    
+                    <li>
+                        
+                        <a href="#基于Tinper-bee中的table组件和其他组件 来实现币种表案例" >基于Tinper-bee中的table组件和其他组件 来实现币种表案例</a>
+                        
+                    </li>
+                    
+                    
+                    
+                    
+                    <ul class="nav" style="display:block">
+                    
+                        <li>
+                            <a href="#目录结构" >目录结构</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#文件讲解" >文件讲解</a>
+                        </li>
+                    
+                    </ul>
+                    
+                    
+                    
+                    
+                    <li>
+                        
+                        <a href="#主子表代码解析" >主子表代码解析</a>
+                        
+                    </li>
+                    
+                    
+                    
+                    
+                    <ul class="nav" style="display:block">
+                    
+                        <li>
+                            <a href="#文件目录分析" >文件目录分析</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#代码查看" >代码查看</a>
+                        </li>
+                    
+                    
+                    
+                    
+                    
+                        <li>
+                            <a href="#分析子组件" >分析子组件</a>
+                        </li>
+                    
+                    
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    
+</div>
+
+<!-- Footer
+================================================== -->
+<footer class="docs-footer" role="contentinfo">
+    <div class="container">
+        <p>Made By YonYouFED. © 2014 - 2016</p>
+    </div>
+</footer>
+
+<script src="source/jquery.min.js"></script>
+<script src="source/bootstrap.min.js"></script>
+<script src="source/docs.min.js"></script>
+<script src="source/highlight.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('code').each(function(i, block) {
+            if (block.innerHTML.indexOf('\n') != -1) {
+                var pn = block.parentNode;
+                if (pn.tagName.toUpperCase() == 'PRE') {
+                    try {
+                        hljs.highlightBlock(block);
+                    } catch(e) {}
+                } else {
+                    pn.innerHTML = '<pre><code>' + block.innerHTML + '</code></pre>';
+                    try {
+                        hljs.highlightBlock(pn.childNodes[0].childNodes[0]);
+                    } catch(e) {}
+                }
+            }
+        });
+
+        var winHeight = $(window).height() - 40,
+            sidebar = $('.docs-sidebar');
+
+        if (sidebar.height() > winHeight) {
+
+            sidebar.css('max-height', winHeight + 'px');
+            sidebar.css('overflow', 'scroll');
+
+            var activeMenu,
+                barScroll = false;
+
+            sidebar.on('mouseover', function() {
+                barScroll = true;
+            });
+
+            sidebar.on('mouseout', function() {
+                barScroll = false;
+            });
+            if (!barScroll) {
+                var activeItem = $('.docs-sidebar li.active a');
+                if (activeItem.length) {
+                    if (!activeMenu || (activeMenu.attr('href') != activeItem.attr('href'))) {
+                        activeMenu = activeItem;
+                        var top = activeMenu.offset().top - sidebar.offset().top;
+                        if (top < 0) {
+                            sidebar.scrollTop(sidebar.scrollTop() + top);
+                        } else if (top > winHeight - 30) {
+                            sidebar.scrollTop(sidebar.scrollTop() + top - winHeight + 30);
+                        }
+                    }
+                }
+            }
+            $(window).on('scroll', function(e) {
+                if (!barScroll) {
+                    var activeItem = $('.docs-sidebar li.active a');
+                    if (activeItem.length) {
+                        if (!activeMenu || (activeMenu.attr('href') != activeItem.attr('href'))) {
+                            activeMenu = activeItem;
+                            var top = activeMenu.offset().top - sidebar.offset().top;
+                            if (top < 0) {
+                                sidebar.scrollTop(sidebar.scrollTop() + top);
+                            } else if (top > winHeight - 30) {
+                                sidebar.scrollTop(sidebar.scrollTop() + top - winHeight + 30);
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>
