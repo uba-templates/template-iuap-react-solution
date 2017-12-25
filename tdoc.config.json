@@ -50,7 +50,6 @@
         {
             "name": "other",
             "title": "扩展资料",
-            "sidebar": true,
             "banner": {
                 "title": "其他资料~！"
             },
